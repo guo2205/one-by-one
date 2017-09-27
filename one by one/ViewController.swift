@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Moya
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    var areas = ["这只是我学习tableView的一个例子","汪汪么么哒","😘","为了给汪汪做非常Nice的App努力中"]
     
+    @IBOutlet weak var tableView: UITableView!
+    var areas:[String] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return areas.count
     }
@@ -21,17 +23,30 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let provider = MoyaProvider<netWorkService>()
+        provider.request(.list) { (result) in
+            switch result {
+            case let .success(moyaResponse):
+                let json = try! moyaResponse.mapJSON() as! [String: Any]
+                self.areas.removeAll()
+                self.areas = json["data"] as! [String]
+                self.tableView.reloadData()
+            case .failure:
+                print("错误")
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
-        sleep(3)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
