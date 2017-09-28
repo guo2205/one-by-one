@@ -11,6 +11,7 @@ import Moya
 
 enum netWorkService {
     case list
+    case miss
 }
 extension netWorkService:TargetType {
     var baseURL: URL {
@@ -22,12 +23,16 @@ extension netWorkService:TargetType {
         switch self {
         case .list:
             return "/list"
+        case .miss:
+            return "/miss"
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .list:
+            return .get
+        case .miss:
             return .get
         }
     }
@@ -36,12 +41,16 @@ extension netWorkService:TargetType {
         switch self {
         case .list:
             return nil
+        case .miss:
+            return nil
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
         case .list:
+            return URLEncoding.default
+        case .miss:
             return URLEncoding.default
         }
     }
@@ -50,12 +59,16 @@ extension netWorkService:TargetType {
         switch self {
         case .list:
             return "list test data:".utf8Encoded
+        case .miss:
+            return "miss test data:".utf8Encoded
         }
     }
     
     var task: Task {
         switch  self {
         case .list:
+            return .request
+        case .miss:
             return .request
         }
     }

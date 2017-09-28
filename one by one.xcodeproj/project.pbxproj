@@ -11,7 +11,7 @@
 		B789947C1F7AD09F00E4342E /* netService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789947B1F7AD09F00E4342E /* netService.swift */; };
 		B7DC733E1F6FAA15003C687F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC733D1F6FAA15003C687F /* AppDelegate.swift */; };
 		B7DC73401F6FAA15003C687F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC733F1F6FAA15003C687F /* ViewController.swift */; };
-		B7DC73431F6FAA15003C687F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7DC73411F6FAA15003C687F /* Main.storyboard */; settings = {ASSET_TAGS = (table1, ); }; };
+		B7DC73431F6FAA15003C687F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7DC73411F6FAA15003C687F /* Main.storyboard */; };
 		B7DC73451F6FAA15003C687F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7DC73441F6FAA15003C687F /* Assets.xcassets */; };
 		B7DC73531F6FAA15003C687F /* one_by_oneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC73521F6FAA15003C687F /* one_by_oneTests.swift */; };
 		B7DC735E1F6FAA15003C687F /* one_by_oneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC735D1F6FAA15003C687F /* one_by_oneUITests.swift */; };
