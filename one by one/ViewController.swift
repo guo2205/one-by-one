@@ -33,9 +33,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         provider.request(.list) { (result) in
             switch result {
             case let .success(moyaResponse):
-                let json = try! moyaResponse.mapJSON() as! [String: Any]
                 self.areas.removeAll()
-                self.areas = json["data"] as! [String]
+                let json:[String:Any] = try! moyaResponse.mapJSON() as! [String:Any]
+                let message = json["message"] as! [String:Any]
+                let data = message["data"] as! [[String:Any]]
+                for index in 0...data.count - 1{
+                    let item = data[index]
+                    let text = item["text"]
+                    self.areas.append(text as! String)
+                }
                 self.tableView.reloadData()
             case .failure:
                 print("错误")
