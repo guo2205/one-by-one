@@ -23,7 +23,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="1" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bnS-XS-eeO">
                                 <rect key="frame" x="0.0" y="170" width="320" height="310"/>
-                                <color key="backgroundColor" red="0.96937136609999996" green="0.69179126869999996" blue="0.87102096809999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.90163975954055786" green="0.74508225917816162" blue="0.70602118968963623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="3I6-uz-QEC" imageView="uUh-9n-Y80" style="IBUITableViewCellStyleDefault" id="L2F-eD-Muu">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
@@ -45,7 +45,7 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96937136609999996" green="0.69179126869999996" blue="0.87102096809999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.90163975954055786" green="0.74508225917816162" blue="0.70602118968963623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -54,21 +54,21 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="miss" translatesAutoresizingMaskIntoConstraints="NO" id="pBz-Bc-xzP">
-                                <rect key="frame" x="109.5" y="40" width="100" height="100"/>
+                                <rect key="frame" x="110" y="40" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="4yE-SA-dqX"/>
                                     <constraint firstAttribute="height" constant="100" id="OUK-Yk-8KR"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96937136609999996" green="0.69179126869999996" blue="0.87102096809999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90163975954055786" green="0.74508225917816162" blue="0.70602118968963623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pBz-Bc-xzP" firstAttribute="centerX" secondItem="bnS-XS-eeO" secondAttribute="centerX" id="1d7-Yd-pGX"/>
-                            <constraint firstAttribute="trailing" secondItem="bnS-XS-eeO" secondAttribute="trailing" id="7z1-8O-ZBw"/>
+                            <constraint firstAttribute="trailing" secondItem="bnS-XS-eeO" secondAttribute="trailing" id="8Ey-AF-hvd"/>
                             <constraint firstItem="pBz-Bc-xzP" firstAttribute="top" secondItem="2mJ-rj-1gv" secondAttribute="bottom" constant="20" id="ADv-B7-ton"/>
                             <constraint firstItem="bnS-XS-eeO" firstAttribute="top" secondItem="pBz-Bc-xzP" secondAttribute="bottom" constant="30" id="L24-Aa-PGp"/>
                             <constraint firstItem="bnS-XS-eeO" firstAttribute="bottom" secondItem="HaN-d9-YZA" secondAttribute="top" id="NOU-ri-rSt"/>
-                            <constraint firstItem="bnS-XS-eeO" firstAttribute="leading" secondItem="xVH-m6-OPd" secondAttribute="leading" id="P32-Bw-2y8"/>
+                            <constraint firstItem="bnS-XS-eeO" firstAttribute="leading" secondItem="xVH-m6-OPd" secondAttribute="leading" id="kR5-nv-fcV"/>
                         </constraints>
                     </view>
                     <connections>

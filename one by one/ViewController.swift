@@ -20,9 +20,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none  //取消选中效果
         cell.textLabel?.text = areas[indexPath.row]
-        
-        //cell.imageView?.frame.height = 20
         cell.imageView?.image = ResizeImage(image: (cell.imageView?.image)!, targetSize: CGSize(width:12, height: 12))
         return cell
     }
@@ -33,12 +32,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //按钮动画
         missButton.transform = CGAffineTransform(scaleX:0,y:0)
         UIView.animate(withDuration:  1){
             self.missButton.transform = CGAffineTransform.identity
         }
-        missButton.layer.cornerRadius = 16
         
+        //按钮圆角
+        missButton.layer.cornerRadius = 16
+    
+        //添加点击事件
+        missButton.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer.init(target:self, action:#selector(ViewController.tapClick(sender:)))
+        missButton.addGestureRecognizer(tap)
+        
+        
+        //网络请求加载table数据
         let provider = MoyaProvider<netWorkService>()
         provider.request(.list) { (result) in
             switch result {
@@ -47,7 +57,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 let json:[String:Any] = try! moyaResponse.mapJSON() as! [String:Any]
                 let message = json["message"] as! [String:Any]
                 let data = message["data"] as! [[String:Any]]
-                for index in 0...data.count - 1{
+                for index in 0...data.count - 1 {
                     let item = data[index]
                     let text = item["text"]
                     self.areas.append(text as! String)
@@ -58,6 +68,28 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             }
         }
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @objc private func tapClick(sender:UITapGestureRecognizer){
+        let alertController = UIAlertController()
+        alertController.title = "想小哥哥了，要告诉他么?"
+        alertController.message = "piu~piu~piu~"
+        let okAction = UIAlertAction(title: "是的", style: UIAlertActionStyle.destructive) {
+            (action: UIAlertAction!) -> Void in
+            let provider = MoyaProvider<netWorkService>()
+            provider.request(.miss) { (result) in
+                switch result {
+                case .success(_):
+                    print("已收到")
+                case .failure:
+                    print("错误")
+                }
+            }
+        }
+        let cancelAction = UIAlertAction(title: "手滑了", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
