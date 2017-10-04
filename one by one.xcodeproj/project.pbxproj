@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6AC1D97C6FBA714338791B71 /* Pods_one_by_oneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82095276B36B46D42C22771 /* Pods_one_by_oneUITests.framework */; };
+		B74B1A951F855E62000E23A1 /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B1A941F855E62000E23A1 /* LogController.swift */; };
 		B789947C1F7AD09F00E4342E /* netService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789947B1F7AD09F00E4342E /* netService.swift */; };
 		B7DC733E1F6FAA15003C687F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC733D1F6FAA15003C687F /* AppDelegate.swift */; };
 		B7DC73401F6FAA15003C687F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC733F1F6FAA15003C687F /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 		732CA21FBA7714BB51609961 /* Pods-one by oneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one by oneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-one by oneUITests/Pods-one by oneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8C6D030414C3A4ED77490F95 /* Pods-one by oneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one by oneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-one by oneTests/Pods-one by oneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A92B7EB426D212F6F6B6FE48 /* Pods-one by one.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one by one.release.xcconfig"; path = "Pods/Target Support Files/Pods-one by one/Pods-one by one.release.xcconfig"; sourceTree = "<group>"; };
+		B74B1A941F855E62000E23A1 /* LogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		B78994781F7AC83A00E4342E /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Alamofire; path = Pods/Alamofire; sourceTree = "<group>"; };
 		B789947B1F7AD09F00E4342E /* netService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netService.swift; sourceTree = "<group>"; };
 		B7DC733A1F6FAA15003C687F /* one by one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "one by one.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				B7DC73441F6FAA15003C687F /* Assets.xcassets */,
 				B7DC73491F6FAA15003C687F /* Info.plist */,
 				B789947B1F7AD09F00E4342E /* netService.swift */,
+				B74B1A941F855E62000E23A1 /* LogController.swift */,
 			);
 			path = "one by one";
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74B1A951F855E62000E23A1 /* LogController.swift in Sources */,
 				B7DC73401F6FAA15003C687F /* ViewController.swift in Sources */,
 				B789947C1F7AD09F00E4342E /* netService.swift in Sources */,
 				B7DC733E1F6FAA15003C687F /* AppDelegate.swift in Sources */,

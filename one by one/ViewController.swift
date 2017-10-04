@@ -11,19 +11,36 @@ import Moya
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var missButton: UIImageView!
-    var areas:[String] = []
+    @IBOutlet weak var missLogButton: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    var listData:[String] = []
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return areas.count
+        return listData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.selectionStyle = UITableViewCellSelectionStyle.none  //取消选中效果
-        cell.textLabel?.text = areas[indexPath.row]
+        //cell.selectionStyle = UITableViewCellSelectionStyle.none  //取消选中效果
+        cell.textLabel?.text = listData[indexPath.row]
         cell.imageView?.image = ResizeImage(image: (cell.imageView?.image)!, targetSize: CGSize(width:12, height: 12))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            self.listData.remove(at: indexPath.row)
+            self.tableView!.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.fade)
+            print(indexPath)
+        }
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -32,7 +49,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //按钮动画
         missButton.transform = CGAffineTransform(scaleX:0,y:0)
         UIView.animate(withDuration:  1){
@@ -47,20 +63,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let tap = UITapGestureRecognizer.init(target:self, action:#selector(ViewController.tapClick(sender:)))
         missButton.addGestureRecognizer(tap)
         
+        missLogButton.isUserInteractionEnabled = true
+        let tap2 = UITapGestureRecognizer.init(target:self, action:#selector(ViewController.tapClick2(sender:)))
+        missLogButton.addGestureRecognizer(tap2)
         
         //网络请求加载table数据
         let provider = MoyaProvider<netWorkService>()
         provider.request(.list) { (result) in
             switch result {
             case let .success(moyaResponse):
-                self.areas.removeAll()
+                self.listData.removeAll()
                 let json:[String:Any] = try! moyaResponse.mapJSON() as! [String:Any]
                 let message = json["message"] as! [String:Any]
                 let data = message["data"] as! [[String:Any]]
                 for index in 0...data.count - 1 {
                     let item = data[index]
                     let text = item["text"]
-                    self.areas.append(text as! String)
+                    self.listData.append(text as! String)
                 }
                 self.tableView.reloadData()
             case .failure:
@@ -90,6 +109,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc private func tapClick2(sender:UITapGestureRecognizer) {
+        let secondViewController = LogController()
+        //self.navigationController!.pushViewController(secondViewController, animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {

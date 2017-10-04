@@ -12,8 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    var rootViewController: UIViewController!
+    var navigationController: UINavigationController!
+    
+    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {  
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        rootViewController = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        navigationController = UINavigationController(rootViewController: rootViewController)
+        
+        window?.rootViewController = rootViewController
+        window?.addSubview(navigationController.view)
         return true
     }
     
