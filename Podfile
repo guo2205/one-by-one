@@ -16,6 +16,7 @@ target 'one by one' do
     inherit! :search_paths
     # Pods for testing
   end
-pod ‘Moya’
-
+pod 'Moya'
+pod 'Pgyer'
+pod 'PgyUpdate'
 end

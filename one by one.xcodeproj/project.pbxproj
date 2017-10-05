@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		6AC1D97C6FBA714338791B71 /* Pods_one_by_oneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82095276B36B46D42C22771 /* Pods_one_by_oneUITests.framework */; };
 		B74B1A951F855E62000E23A1 /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B1A941F855E62000E23A1 /* LogController.swift */; };
+		B74B1A971F85E322000E23A1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74B1A961F85E322000E23A1 /* CoreTelephony.framework */; };
+		B74B1A991F85E32C000E23A1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74B1A981F85E32C000E23A1 /* OpenGLES.framework */; };
+		B74B1A9B1F85E334000E23A1 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74B1A9A1F85E334000E23A1 /* CoreMotion.framework */; };
+		B74B1A9D1F85E33C000E23A1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74B1A9C1F85E33C000E23A1 /* AudioToolbox.framework */; };
+		B74B1A9F1F85E343000E23A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74B1A9E1F85E343000E23A1 /* AVFoundation.framework */; };
+		B74B1AA11F85E34C000E23A1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74B1AA01F85E34C000E23A1 /* SystemConfiguration.framework */; };
 		B789947C1F7AD09F00E4342E /* netService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B789947B1F7AD09F00E4342E /* netService.swift */; };
 		B7DC733E1F6FAA15003C687F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC733D1F6FAA15003C687F /* AppDelegate.swift */; };
 		B7DC73401F6FAA15003C687F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC733F1F6FAA15003C687F /* ViewController.swift */; };
@@ -45,6 +51,16 @@
 		8C6D030414C3A4ED77490F95 /* Pods-one by oneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one by oneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-one by oneTests/Pods-one by oneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A92B7EB426D212F6F6B6FE48 /* Pods-one by one.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one by one.release.xcconfig"; path = "Pods/Target Support Files/Pods-one by one/Pods-one by one.release.xcconfig"; sourceTree = "<group>"; };
 		B74B1A941F855E62000E23A1 /* LogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
+		B74B1A961F85E322000E23A1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B74B1A981F85E32C000E23A1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B74B1A9A1F85E334000E23A1 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B74B1A9C1F85E33C000E23A1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B74B1A9E1F85E343000E23A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B74B1AA01F85E34C000E23A1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B74B1AA61F85E80A000E23A1 /* one by one-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "one by one-Bridging-Header.h"; sourceTree = "<group>"; };
+		B74B1AA71F85E8C4000E23A1 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
+		B74B1AA91F85E8DD000E23A1 /* PgySDK */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PgySDK; path = Pods/Pgyer/PgySDK; sourceTree = "<group>"; };
+		B74B1AAB1F85E8EF000E23A1 /* Pgyer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Pgyer; path = Pods/Pgyer; sourceTree = "<group>"; };
 		B78994781F7AC83A00E4342E /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Alamofire; path = Pods/Alamofire; sourceTree = "<group>"; };
 		B789947B1F7AD09F00E4342E /* netService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netService.swift; sourceTree = "<group>"; };
 		B7DC733A1F6FAA15003C687F /* one by one.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "one by one.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +85,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74B1AA11F85E34C000E23A1 /* SystemConfiguration.framework in Frameworks */,
+				B74B1A9F1F85E343000E23A1 /* AVFoundation.framework in Frameworks */,
+				B74B1A9D1F85E33C000E23A1 /* AudioToolbox.framework in Frameworks */,
+				B74B1A9B1F85E334000E23A1 /* CoreMotion.framework in Frameworks */,
+				B74B1A991F85E32C000E23A1 /* OpenGLES.framework in Frameworks */,
+				B74B1A971F85E322000E23A1 /* CoreTelephony.framework in Frameworks */,
 				E4CEDB68523BA2605E4B19F4 /* Pods_one_by_one.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +117,15 @@
 		1B6F81C2EE4B74B2FFD4FFCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B74B1AAB1F85E8EF000E23A1 /* Pgyer */,
+				B74B1AA91F85E8DD000E23A1 /* PgySDK */,
+				B74B1AA71F85E8C4000E23A1 /* Pods */,
+				B74B1AA01F85E34C000E23A1 /* SystemConfiguration.framework */,
+				B74B1A9E1F85E343000E23A1 /* AVFoundation.framework */,
+				B74B1A9C1F85E33C000E23A1 /* AudioToolbox.framework */,
+				B74B1A9A1F85E334000E23A1 /* CoreMotion.framework */,
+				B74B1A981F85E32C000E23A1 /* OpenGLES.framework */,
+				B74B1A961F85E322000E23A1 /* CoreTelephony.framework */,
 				B78994781F7AC83A00E4342E /* Alamofire */,
 				4CFF2CD26E495C631538E6D2 /* Pods_one_by_one.framework */,
 				1F1EA85CC9728397EC232B4D /* Pods_one_by_oneTests.framework */,
@@ -135,6 +166,7 @@
 				B7DC73491F6FAA15003C687F /* Info.plist */,
 				B789947B1F7AD09F00E4342E /* netService.swift */,
 				B74B1A941F855E62000E23A1 /* LogController.swift */,
+				B74B1AA61F85E80A000E23A1 /* one by one-Bridging-Header.h */,
 			);
 			path = "one by one";
 			sourceTree = "<group>";
@@ -251,6 +283,7 @@
 					B7DC73391F6FAA15003C687F = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = X3LKGQJ5XP;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					B7DC734D1F6FAA15003C687F = {
@@ -619,12 +652,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = X3LKGQJ5XP;
 				INFOPLIST_FILE = "one by one/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lingfeng.obo.one-by-one";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/guolingfeng/Documents/ios开发/one-by-one/one by one/one by one-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -635,12 +671,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = X3LKGQJ5XP;
 				INFOPLIST_FILE = "one by one/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lingfeng.obo.one-by-one";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/guolingfeng/Documents/ios开发/one-by-one/one by one/one by one-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

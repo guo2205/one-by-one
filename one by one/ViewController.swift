@@ -49,6 +49,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        PgyManager.shared().start(withAppId: "6f3ee763c5ebbeb4c2d0baf1e21c65e5");
+        PgyUpdateManager.sharedPgy().start(withAppId: "6f3ee763c5ebbeb4c2d0baf1e21c65e5");
+        PgyUpdateManager.sharedPgy().checkUpdate()
+        
         //按钮动画
         missButton.transform = CGAffineTransform(scaleX:0,y:0)
         UIView.animate(withDuration:  1){
@@ -112,7 +117,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     @objc private func tapClick2(sender:UITapGestureRecognizer) {
-        let secondViewController = LogController()
+        //let secondViewController = LogController()
         //self.navigationController!.pushViewController(secondViewController, animated: true)
         
     }
