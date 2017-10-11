@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -14,20 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var rootViewController: UIViewController!
     var navigationController: UINavigationController!
     
-    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        /*
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        rootViewController = storyboard.instantiateViewController(withIdentifier: "ViewController")
-        navigationController = UINavigationController(rootViewController: rootViewController)
-        
-        window?.rootViewController = rootViewController
-        window?.addSubview(navigationController.view)
-        */
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (granted, error) in
+        }
+        UIApplication.shared.registerForRemoteNotifications()
         return true
     }
+    
+    func application(_ application: UIApplication,             didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Get Push token: \(deviceToken)")
+        
+    }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

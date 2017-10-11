@@ -50,6 +50,7 @@
 		732CA21FBA7714BB51609961 /* Pods-one by oneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one by oneUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-one by oneUITests/Pods-one by oneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8C6D030414C3A4ED77490F95 /* Pods-one by oneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one by oneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-one by oneTests/Pods-one by oneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A92B7EB426D212F6F6B6FE48 /* Pods-one by one.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-one by one.release.xcconfig"; path = "Pods/Target Support Files/Pods-one by one/Pods-one by one.release.xcconfig"; sourceTree = "<group>"; };
+		B72A0C651F8E98E50040980E /* one by one.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "one by one.entitlements"; sourceTree = "<group>"; };
 		B74B1A941F855E62000E23A1 /* LogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		B74B1A961F85E322000E23A1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B74B1A981F85E32C000E23A1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -159,6 +160,7 @@
 		B7DC733C1F6FAA15003C687F /* one by one */ = {
 			isa = PBXGroup;
 			children = (
+				B72A0C651F8E98E50040980E /* one by one.entitlements */,
 				B7DC733D1F6FAA15003C687F /* AppDelegate.swift */,
 				B7DC733F1F6FAA15003C687F /* ViewController.swift */,
 				B7DC73411F6FAA15003C687F /* Main.storyboard */,
@@ -285,6 +287,14 @@
 						DevelopmentTeam = X3LKGQJ5XP;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					B7DC734D1F6FAA15003C687F = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -653,6 +663,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "one by one/one by one.entitlements";
 				DEVELOPMENT_TEAM = X3LKGQJ5XP;
 				INFOPLIST_FILE = "one by one/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -672,6 +683,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "one by one/one by one.entitlements";
 				DEVELOPMENT_TEAM = X3LKGQJ5XP;
 				INFOPLIST_FILE = "one by one/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
