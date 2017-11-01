@@ -49,7 +49,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //隐藏导航栏
+        self.navigationController?.isNavigationBarHidden = true
+        //SDK
         PgyManager.shared().start(withAppId: "6f3ee763c5ebbeb4c2d0baf1e21c65e5");
         PgyUpdateManager.sharedPgy().start(withAppId: "6f3ee763c5ebbeb4c2d0baf1e21c65e5");
         PgyUpdateManager.sharedPgy().checkUpdate()
@@ -94,6 +96,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     @objc private func tapClick(sender:UITapGestureRecognizer){
         let alertController = UIAlertController()
         alertController.title = "想小哥哥了，要告诉他么?"
@@ -117,15 +125,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     @objc private func tapClick2(sender:UITapGestureRecognizer) {
-        //let secondViewController = LogController()
-        //self.navigationController!.pushViewController(secondViewController, animated: true)
+        let secondViewController = LogController()
+        self.navigationController!.pushViewController(secondViewController, animated: true)
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    //override func didReceiveMemoryWarning() {
+    //    super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+    //}
     
     func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
