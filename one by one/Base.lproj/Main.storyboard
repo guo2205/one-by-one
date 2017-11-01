@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="198" y="222"/>
         </scene>
-        <!--Title-->
+        <!--Log Controller-->
         <scene sceneID="Vow-7Q-E7f">
             <objects>
-                <viewController id="oYU-WO-YKG" customClass="LogController" customModule="one_by_one" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogController" id="oYU-WO-YKG" customClass="LogController" customModule="one_by_one" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mdd-51-SYE"/>
                         <viewControllerLayoutGuide type="bottom" id="gIP-LS-Dby"/>
@@ -119,11 +119,8 @@
                     <view key="view" contentMode="scaleToFill" id="upV-Hl-NW3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95109348910000002" green="0.85946499440000002" blue="0.96937136609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Bju-Ac-zg0">
-                        <barButtonItem key="backBarButtonItem" title="主页" id="UVq-3d-DDO"/>
-                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSz-8M-dbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

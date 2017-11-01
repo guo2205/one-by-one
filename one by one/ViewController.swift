@@ -125,15 +125,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     @objc private func tapClick2(sender:UITapGestureRecognizer) {
-        let secondViewController = LogController()
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: String(describing: type(of: LogController())))
+            as! LogController
         self.navigationController!.pushViewController(secondViewController, animated: true)
         
     }
-    
-    //override func didReceiveMemoryWarning() {
-    //    super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    //}
     
     func ResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size

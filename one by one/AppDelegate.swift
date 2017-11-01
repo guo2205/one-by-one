@@ -18,11 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //APP初始化导航
         let sb=UIStoryboard(name: "Main", bundle: nil)
         let vc=sb.instantiateViewController(withIdentifier: "ViewController")
-        let navigationC=UINavigationController(rootViewController: vc)
+        let navigationC = UINavigationController(rootViewController: vc)
         self.window?.rootViewController=navigationC
         
+        //授权推送权限
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (granted, error) in
         }
         UIApplication.shared.registerForRemoteNotifications()
