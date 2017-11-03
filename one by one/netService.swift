@@ -12,6 +12,7 @@ import Moya
 enum netWorkService {
     case list
     case miss
+    case signlist
 }
 extension netWorkService:TargetType {
     var baseURL: URL {
@@ -21,11 +22,14 @@ extension netWorkService:TargetType {
     
     var path: String {
         switch self {
-        case .list:
-            return "/list"
-        case .miss:
-            return "/miss"
+            case .list:
+                return "/list"
+            case .miss:
+                return "/miss"
+            case .signlist:
+                return "/queryMiss"
         }
+        
     }
     
     var method: Moya.Method {
@@ -33,6 +37,9 @@ extension netWorkService:TargetType {
         case .list:
             return .get
         case .miss:
+            return .get
+            
+        case .signlist:
             return .get
         }
     }
@@ -43,6 +50,8 @@ extension netWorkService:TargetType {
             return nil
         case .miss:
             return nil
+        case .signlist:
+            return nil
         }
     }
     
@@ -51,6 +60,8 @@ extension netWorkService:TargetType {
         case .list:
             return URLEncoding.default
         case .miss:
+            return URLEncoding.default
+        case .signlist:
             return URLEncoding.default
         }
     }
@@ -61,6 +72,8 @@ extension netWorkService:TargetType {
             return "list test data:".utf8Encoded
         case .miss:
             return "miss test data:".utf8Encoded
+        case .signlist:
+            return "signlist test dasta".utf8Encoded
         }
     }
     
@@ -69,6 +82,8 @@ extension netWorkService:TargetType {
         case .list:
             return .request
         case .miss:
+            return .request
+        case .signlist:
             return .request
         }
     }

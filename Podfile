@@ -19,4 +19,5 @@ target 'one by one' do
 pod 'Moya'
 pod 'Pgyer'
 pod 'PgyUpdate'
+pod 'SwiftDate'
 end

@@ -119,12 +119,52 @@
                     <view key="view" contentMode="scaleToFill" id="upV-Hl-NW3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hGZ-rv-6EG">
+                                <rect key="frame" x="0.0" y="30" width="375" height="637"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Aoo-C5-6Zq" style="IBUITableViewCellStyleDefault" id="nNa-hN-852">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nNa-hN-852" id="SeR-ko-VFP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aoo-C5-6Zq">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oYU-WO-YKG" id="OsX-6N-7FE"/>
+                                    <outlet property="delegate" destination="oYU-WO-YKG" id="VeC-Qx-h8Y"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.95109348910000002" green="0.85946499440000002" blue="0.96937136609999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hGZ-rv-6EG" firstAttribute="centerX" secondItem="upV-Hl-NW3" secondAttribute="centerX" id="Ce9-bd-Lvf"/>
+                            <constraint firstItem="hGZ-rv-6EG" firstAttribute="top" secondItem="upV-Hl-NW3" secondAttribute="top" constant="30" id="GbZ-Ux-iSu"/>
+                            <constraint firstItem="hGZ-rv-6EG" firstAttribute="bottom" secondItem="gIP-LS-Dby" secondAttribute="top" id="qCR-y8-yK2"/>
+                            <constraint firstAttribute="trailing" secondItem="hGZ-rv-6EG" secondAttribute="trailing" id="qYQ-9Y-Ogq"/>
+                            <constraint firstItem="hGZ-rv-6EG" firstAttribute="leading" secondItem="upV-Hl-NW3" secondAttribute="leading" id="qid-JL-Klm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="hGZ-rv-6EG" id="zsh-Ut-Cfv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSz-8M-dbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="222"/>
+            <point key="canvasLocation" x="1021.6" y="221.73913043478262"/>
         </scene>
     </scenes>
     <resources>
