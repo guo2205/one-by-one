@@ -29,62 +29,61 @@ extension netWorkService:TargetType {
             case .signlist:
                 return "/queryMiss"
         }
-        
     }
     
     var method: Moya.Method {
         switch self {
-        case .list:
-            return .get
-        case .miss:
-            return .get
+            case .list:
+                return .get
+            case .miss:
+                return .get
             
-        case .signlist:
-            return .get
+            case .signlist:
+                return .get
         }
     }
     
     var parameters: [String : Any]? {
         switch self {
-        case .list:
-            return nil
-        case .miss:
-            return nil
-        case .signlist:
-            return nil
+            case .list:
+                return nil
+            case .miss:
+                return nil
+            case .signlist:
+                return nil
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .list:
-            return URLEncoding.default
-        case .miss:
-            return URLEncoding.default
-        case .signlist:
-            return URLEncoding.default
+            case .list:
+                return URLEncoding.default
+            case .miss:
+                return URLEncoding.default
+            case .signlist:
+                return URLEncoding.default
         }
     }
     
     var sampleData: Data{
         switch self {
-        case .list:
-            return "list test data:".utf8Encoded
-        case .miss:
-            return "miss test data:".utf8Encoded
-        case .signlist:
-            return "signlist test dasta".utf8Encoded
+            case .list:
+                return "list test data:".utf8Encoded
+            case .miss:
+                return "miss test data:".utf8Encoded
+            case .signlist:
+                return "signlist test dasta".utf8Encoded
         }
     }
     
     var task: Task {
         switch  self {
-        case .list:
-            return .request
-        case .miss:
-            return .request
-        case .signlist:
-            return .request
+            case .list:
+                return .request
+            case .miss:
+                return .request
+            case .signlist:
+                return .request
         }
     }
 }

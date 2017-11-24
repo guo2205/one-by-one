@@ -37,30 +37,27 @@ class LogController: UIViewController,UITableViewDelegate,UITableViewDataSource{
         let provider = MoyaProvider<netWorkService>()
         provider.request(.signlist) { (result) in
             switch result {
-            case let .success(moyaResponse):
-                self.listData.removeAll()
-                let rome = Region(tz: TimeZoneName.europeRome, cal: CalendarName.gregorian, loc: LocaleName.italian)
-                let json:[String:Any] = try! moyaResponse.mapJSON() as! [String:Any]
-                let message = json["message"] as! [String:Any]
-                let data = message["data"] as! [[String:Any]]
-                for index in 0...data.count - 1 {
-                    let item = data[index]
-                    //2017-09-30T03:45:09.000Z
-                    let time = item["ctime"] as! String
-                    let date_custom = try! DateInRegion(string: time, format: .custom("yyyy-MM-dd'T'HH:mm:ss'.000Z'") , fromRegion: rome)
-                    
-                    self.listData.append(date_custom.string(custom:"yyyy-MM-dd HH:mm:ss"))
-                }
-                self.tableView.reloadData()
-            case .failure:
-                print("错误")
+                case let .success(moyaResponse):
+                    self.listData.removeAll()
+                    let rome = Region(tz: TimeZoneName.europeRome, cal: CalendarName.gregorian, loc: LocaleName.italian)
+                    let json:[String:Any] = try! moyaResponse.mapJSON() as! [String:Any]
+                    let message = json["message"] as! [String:Any]
+                    let data = message["data"] as! [[String:Any]]
+                    for index in 0...data.count - 1 {
+                        let item = data[index]
+                        //2017-09-30T03:45:09.000Z
+                        let time = item["ctime"] as! String
+                        let date_custom = try! DateInRegion(string: time, format: .custom("yyyy-MM-dd'T'HH:mm:ss'.000Z'") , fromRegion: rome)
+                        self.listData.append(date_custom.string(custom:"yyyy-MM-dd HH:mm:ss"))
+                    }
+                    self.tableView.reloadData()
+                case .failure:
+                    print("错误")
             }
         }
     }
     
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer,
-                           shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer:
-        UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if self.childViewControllers.count == 1 {
             return false
         }
